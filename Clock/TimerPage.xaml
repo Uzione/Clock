@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clock.TimerPage"
+             Title="Timer"
+             MinimumHeightRequest="450" MinimumWidthRequest="300">
+    <Grid>
+        <!--시간-->
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="grdTime" Grid.Row="0" Margin="50,50,50,30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label 
+                   Text="Hou" FontSize="Body" FontAttributes="Bold"
+                   Grid.Column="0" Grid.Row="0" HorizontalOptions="Center"/>
+            <Label 
+                   Text="Min" FontSize="Body" FontAttributes="Bold"
+                   Grid.Column="1" Grid.Row="0" HorizontalOptions="Center"/>
+            <Label 
+                   Text="Sec" FontSize="Body" FontAttributes="Bold"
+                   Grid.Column="2" Grid.Row="0" HorizontalOptions="Center"/>
+            <Picker x:Name="lstHou"
+                    Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
+                    BackgroundColor="WhiteSmoke" HeightRequest="100"/>
+            <Picker x:Name="lstMin"
+                    Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
+                    BackgroundColor="WhiteSmoke" HeightRequest="100"/>
+            <Picker x:Name="lstSec"
+                    Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
+                    BackgroundColor="WhiteSmoke" HeightRequest="100"/>
+        </Grid>
+
+        <!--버튼-->
+        <Grid x:Name="grdButton" Grid.Row="1" Margin="50,0,50,40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnStart"
+                    Clicked="btnStart_Clicked"
+                    Text="Start" FontSize="15" TextColor="Black"
+                    Grid.Column="0" HorizontalOptions="End"
+                    Margin="0,0,10,0" HeightRequest="50" WidthRequest="100"
+                    BackgroundColor="WhiteSmoke"/>
+            <Button x:Name="btnStop"
+                    Clicked="btnStop_Clicked"
+                    Text="Stop" FontSize="15" TextColor="Black"
+                    Grid.Column="1" HorizontalOptions="Start"
+                    Margin="10,0,0,0" HeightRequest="50" WidthRequest="100"
+                    BackgroundColor="IndianRed"/>
+        </Grid>
+
+        <Grid x:Name="grdTimer" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblHou"
+                   HorizontalOptions="Center" VerticalOptions="Center"
+                   Grid.Column="0" FontAttributes="Bold" FontSize="50"/>
+            <Label x:Name="lblMin"
+                   HorizontalOptions="Center" VerticalOptions="Center"
+                   Grid.Column="2" FontAttributes="Bold" FontSize="50"/>
+            <Label x:Name="lblSec"
+                   HorizontalOptions="Center" VerticalOptions="Center"
+                   Grid.Column="4" FontAttributes="Bold" FontSize="50"/>
+            <Label HorizontalOptions="Center" VerticalOptions="Center"
+                   Grid.Column="1" FontAttributes="Bold" FontSize="50"
+                Text=":"/>
+            <Label HorizontalOptions="Center" VerticalOptions="Center"
+                   Grid.Column="3" FontAttributes="Bold" FontSize="50"
+                Text=":"/>
+
+        </Grid>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clock.StopWatch"
+             Title="StopWatch"
+             HeightRequest="400" WidthRequest="300">
+
+    <VerticalStackLayout Margin="20">
+        <!--시간-->
+        <Grid HorizontalOptions="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblMin" Text="00" HorizontalOptions="End"
+                   Grid.Column="0" FontSize="25" Margin="0,0,0,0"/>
+            <Label x:Name="lblSec" Text="00" HorizontalOptions="Center"
+                   Grid.Column="2" FontSize="25" Margin="0,0,0,0"/>
+            <Label x:Name="lblDSec" Text="00" HorizontalOptions="Start"
+                   Grid.Column="4" FontSize="25" Margin="0,0,0,0"/>
+            <Label  Text=":" HorizontalOptions="Center"
+                   Grid.Column="1" FontSize="25" Margin="0,0,0,0"/>
+            <Label  Text="." HorizontalOptions="Center"
+                   Grid.Column="3" FontSize="25" Margin="0,0,0,0"/>
+        </Grid>
+        
+        <!--리스트-->
+        <Grid>
+            <Picker x:Name="list" HorizontalOptions="Center" WidthRequest="100"
+                      Margin="100,30,100,30"/>
+        </Grid>
+
+        <!--버튼-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnRecord" Text="reset" Clicked="btnRecord_Click"
+                    Grid.Column="0" FontSize="20" BackgroundColor="WhiteSmoke" TextColor="Black"/>
+
+            <Button x:Name="btnStart" Text="start" Clicked="btnStart_Click"
+                    Grid.Column="1" FontSize="20" BackgroundColor="WhiteSmoke" TextColor="Black"/>
+
+        </Grid>
+        
+    </VerticalStackLayout>
+    
+</ContentPage>
